@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>Climate Solutions</title>
+ 
+</head>
+<body class="bg-primary-dark text-text-light-gray h-[100vh]">
+ <%- include('partials/navbar', {page: '/'}) %>
+  <div class="container mx-auto mt-12 px-6">
+    <div class="bg-secondary-dark p-12 border-4 border-border-strong">
+      <div class="text-center max-w-xl mx-auto">
+        <h1 class="text-6xl font-extrabold text-accent-electric mb-8">Explore Climate Solutions</h1>
+        <p class="text-text-medium-gray text-lg mb-8">Discover innovative projects to combat climate change and protect the planet.</p>
+        <a href="/solutions/projects" class="inline-block bg-accent-magenta text-primary-dark px-8 py-4 font-semibold hover:bg-accent-electric transition-colors border-2 border-accent-magenta">Browse All Projects</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="bg-secondary-dark border-4 border-border-strong shadow-lg">
+        <div class="border-b-4 border-border-light">
+          <img src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" alt="Abandoned Farmland Restoration" class="w-full h-56 object-cover border-2 border-accent-magenta" />
+        </div>
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-accent-electric mb-5">Abandoned Farmland Restoration</h2>
+          <p class="text-text-medium-gray mb-8">Restoration can bring degraded farmland back into productivity and sequester carbon in the process.</p>
+          <div class="flex justify-end">
+            <a href="/solutions/projects/1" class="bg-text-medium-gray text-primary-dark px-6 py-3 hover:bg-border-strong transition-colors border-2 border-text-medium-gray">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-secondary-dark border-4 border-border-strong shadow-lg">
+        <div class="border-b-4 border-border-light">
+          <img src="https://drawdown.org/sites/default/files/solutions2020/solution_alternativecement02.jpg" alt="Alternative Cement" class="w-full h-56 object-cover border-2 border-accent-magenta" />
+        </div>
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-accent-electric mb-5">Alternative Cement</h2>
+          <p class="text-text-medium-gray mb-8">Reformulation can reduce emissions by millions of metric tons each year.</p>
+          <div class="flex justify-end">
+            <a href="/solutions/projects/2" class="bg-text-medium-gray text-primary-dark px-6 py-3 hover:bg-border-strong transition-colors border-2 border-text-medium-gray">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-secondary-dark border-4 border-border-strong shadow-lg">
+        <div class="border-b-4 border-border-light">
+          <img src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg" alt="Bicycle Infrastructure" class="w-full h-56 object-cover border-2 border-accent-magenta" />
+        </div>
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-accent-electric mb-5">Bicycle Infrastructure</h2>
+          <p class="text-text-medium-gray mb-8">Infrastructure is essential for supporting safe and abundant bicycle use, which curbs emissions.</p>
+          <div class="flex justify-end">
+            <a href="/solutions/projects/3" class="bg-text-medium-gray text-primary-dark px-6 py-3 hover:bg-border-strong transition-colors border-2 border-text-medium-gray">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

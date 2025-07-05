@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Projects - Climate Solutions</title>
+  </head>
+  <body class="bg-brutal-bg text-brutal-text font-brutal min-h-screen">
+    <%- include('partials/navbar', {page: '/solutions/projects'}) %>
+    <div class="container mx-auto px-4 py-12">
+      <section
+        class="bg-white border-2 border-brutal-border mb-10 shadow-brutal p-8"
+      >
+        <div class="text-center">
+          <h1 class="text-5xl font-black text-brutal-error mb-4">Projects</h1>
+          <p class="text-brutal-muted mb-8">
+            Explore the various climate solutions we're working on.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="/solutions/projects?sector=Transportation"
+              class="px-4 py-2 bg-brutal-hover border-2 border-brutal-border hover:bg-brutal-accent font-semibold"
+            >
+              Transportation
+            </a>
+            <a
+              href="/solutions/projects?sector=Industry"
+              class="px-4 py-2 bg-brutal-hover border-2 border-brutal-border hover:bg-brutal-accent font-semibold"
+            >
+              Industry
+            </a>
+            <a
+              href="/solutions/projects?sector=Land%20Sinks"
+              class="px-4 py-2 bg-brutal-hover border-2 border-brutal-border hover:bg-brutal-accent font-semibold"
+            >
+              Land Sinks
+            </a>
+            <a
+              href="/solutions/projects?sector=Food%2C%20Agriculture%2C%20and%20Land%20Use"
+              class="px-4 py-2 bg-brutal-hover border-2 border-brutal-border hover:bg-brutal-accent font-semibold"
+            >
+              Food & Agriculture
+            </a>
+            
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-white border-2 border-brutal-border p-6 shadow-brutal">
+        <div class="overflow-x-auto">
+          <table class="table w-full text-left">
+            <thead class="bg-brutal-hover border-b-2 border-brutal-border">
+              <tr>
+                <th class="py-3 px-4">#</th>
+                <th class="py-3 px-4">Title</th>
+                <th class="py-3 px-4">Sector</th>
+                <th class="py-3 px-4">Summary</th>
+                <th class="py-3 px-4">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% projects.forEach((project, index) => { %>
+              <tr class="border-b border-brutal-border hover:bg-brutal-hover">
+                <td class="py-3 px-4"><%= index + 1 %></td>
+                <td class="py-3 px-4 font-semibold"><%= project.title %></td>
+                <td class="py-3 px-4">
+                  <a
+                    href="/solutions/projects?sector=<%= encodeURIComponent(project.sector) %>"
+                    class="inline-block px-3 py-1 border-2 border-brutal-border hover:bg-brutal-accent transition-colors"
+                  >
+                    <%= project.sector %>
+                  </a>
+                </td>
+                <td class="py-3 px-4 text-brutal-muted">
+                  <%= project.summary_short %>
+                </td>
+                <td class="py-3 px-4">
+                  <a
+                    href="/solutions/projects/<%= project.id %>"
+                    class="inline-block px-3 py-1 border-2 border-brutal-border text-brutal-error hover:bg-brutal-accent"
+                  >
+                    Details
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

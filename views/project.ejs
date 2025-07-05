@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Project Details - Climate Solutions</title>
+  </head>
+  <body class="bg-primary-dark text-text-light-gray h-[100vh]">
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="container mx-auto px-6 py-10">
+      <section class="bg-secondary-dark shadow-lg border-4 border-border-strong mb-12">
+        <div class="text-center p-12">
+          <div class="max-w-xl mx-auto">
+            <h1 class="text-6xl font-extrabold text-accent-electric">
+              <%= project.title %>
+            </h1>
+            <p class="py-8 text-text-medium-gray text-lg">
+              Below, you will find detailed information about the project: <%= project.title %>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-secondary-dark border-4 border-border-strong shadow-lg p-8">
+        <div class="mb-10">
+          <img src="<%= project.feature_img_url %>" alt="<%= project.title %> Image" class="w-full h-96 object-cover border-4 border-accent-magenta shadow-xl" />
+        </div>
+
+        <h2 class="text-4xl font-bold text-accent-electric mb-6">Introduction</h2>
+        <p class="text-xl leading-relaxed text-text-light-gray mb-10">
+          <%= project.intro_short %>
+        </p>
+
+        <h2 class="text-4xl font-bold text-accent-electric mb-6">Impact</h2>
+        <p class="text-xl leading-relaxed text-text-light-gray mb-10">
+          <%= project.impact %>
+        </p>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+          <a href="<%= project.original_source_url %>" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-magenta text-primary-dark px-8 py-4 font-semibold hover:bg-accent-electric transition-colors border-2 border-accent-magenta">
+            Learn More from Source
+          </a>
+          <div id="quote-container" class="text-right p-6 bg-primary-dark border-2 border-border-strong max-w-sm w-full">
+            <p id="quote-text" class="italic text-text-light-gray text-lg mb-3">Loading a random quote...</p>
+            <p id="quote-author" class="font-semibold text-accent-electric text-base">-</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="#" onclick="history.back(); return false;" class="inline-block bg-text-medium-gray text-primary-dark px-8 py-4 font-semibold hover:bg-border-strong transition-colors border-2 border-text-medium-gray">
+            &larr; Go Back
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const quoteTextElement = document.getElementById("quote-text");
+        const quoteAuthorElement = document.getElementById("quote-author");
+
+        try {
+          const response = await fetch("https://dummyjson.com/quotes/random");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          quoteTextElement.textContent = `"${data.quote}"`;
+          quoteAuthorElement.textContent = `- ${data.author}`;
+        } catch (error) {
+          console.error("Failed to fetch random quote:", error);
+          quoteTextElement.textContent = "Failed to load quote.";
+          quoteAuthorElement.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>

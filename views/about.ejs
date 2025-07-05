@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <title>About - Climate Solutions</title>
+  </head>
+  <body class="bg-primary-dark text-text-light-gray min-h-screen">
+    <%- include('partials/navbar', {page: '/about'}) %>
+
+    <div class="container mx-auto px-6 py-10">
+      <section class="bg-secondary-dark shadow-lg border-4 border-border-strong mb-12 rounded-lg">
+        <div class="text-center p-12">
+          <div class="max-w-xl mx-auto">
+            <h1 class="text-6xl font-extrabold text-accent-electric">About Me</h1>
+            <p class="py-8 text-text-medium-gray text-lg">
+              All about my background, passions, and motivations for researching climate solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center">
+          <img src="https://static.toiimg.com/thumb/msid-121340289,width-1280,height-720,resizemode-4/121340289.jpg" alt="My Image" class="border-4 border-accent-magenta shadow-xl max-w-full h-auto rounded-md"/>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold mb-6 text-accent-electric">Hi, I am Sujit khadka</h2>
+          <p class="text-xl leading-relaxed text-text-light-gray">
+            I am very keen in learning
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>404 Not Found</title>
+  </head>
+ <body class="bg-brutal-bg text-brutal-text font-brutal min-h-screen">
+    <%- include('partials/navbar', {page: ''}) %>
+  <div class="container mx-auto px-4 py-10">
+    <div class="bg-white border-2 border-brutal-border p-8 shadow-brutal">
+      <div class="text-center max-w-md mx-auto">
+        <h1 class="text-[6rem] font-black text-brutal-error mb-6">404</h1>
+        <p class="text-xl text-brutal-muted mb-6"><%= message %></p>
+        <a
+          href="/"
+          class="inline-block bg-brutal-accent px-6 py-3 text-brutal-text font-bold border-2 border-brutal-border hover:bg-brutal-hover transition-colors"
+        >
+          Go Back
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
